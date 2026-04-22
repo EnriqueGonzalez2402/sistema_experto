@@ -1,4 +1,6 @@
-def explicar(hechos):
-    print("\n🧠 EXPLICACIÓN:")
-    for k, v in hechos.items():
-        print(f"{k} = {v} fue utilizado en la inferencia.")
+print("\n🧠 EXPLICACIÓN:")
+for attr, val in historial:
+    if "≠" in str(val):
+        print(f"- {attr} no es {val.replace('≠ ', '')}")
+    else:
+        print(f"- {attr} = {val}")

@@ -1,8 +1,5 @@
 import math
 
-# ---------------------------
-# ENTROPÍA (para preguntas)
-# ---------------------------
 def entropia(valores):
     total = len(valores)
     if total == 0:
@@ -16,56 +13,43 @@ def entropia(valores):
 
 
 def mejor_pregunta(personajes, preguntas, hechos):
-    mejor = None
-    mejor_gain = -1
 
-    for atributo in preguntas:
+    mejor = None
+    mejor_entropia = -1
+
+    for atributo, texto, valor in preguntas:
+
         if atributo in hechos:
             continue
 
-        valores = [1 if p[atributo] else 0 for p in personajes]
+        valores = [1 if p.get(atributo) == valor else 0 for p in personajes]
 
         h = entropia(valores)
 
-        if h > mejor_gain:
-            mejor_gain = h
-            mejor = atributo
+        if h > mejor_entropia:
+            mejor_entropia = h
+            mejor = (atributo, texto, valor)
 
     return mejor
 
 
-# ---------------------------
-# FILTRADO (reglas)
-# ---------------------------
 def filtrar(personajes, atributo, valor):
-    return [p for p in personajes if p[atributo] == valor]
+    return [p for p in personajes if p.get(atributo) == valor]
 
 
-# ---------------------------
-# PROBABILIDAD (ranking)
-# ---------------------------
 def inferencia_prob(personajes, hechos):
-
-    pesos = {
-        "espada": 0.2,
-        "capitan": 0.3,
-        "hollow": 0.3,
-        "genero": 0.2
-    }
 
     resultados = []
 
     for p in personajes:
         score = 0
-        total = 0
+        total = len(hechos)
 
         for k, v in hechos.items():
-            if k in pesos:
-                total += pesos[k]
-                if p[k] == v:
-                    score += pesos[k]
+            if p.get(k) == v:
+                score += 1
 
-        prob = score / total if total > 0 else 0.01
+        prob = score / total if total > 0 else 0
         resultados.append((p["nombre"], prob))
 
     resultados.sort(key=lambda x: x[1], reverse=True)

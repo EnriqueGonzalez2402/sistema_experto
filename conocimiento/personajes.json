@@ -1,31 +1,299 @@
 [
-    {"nombre": "Ichigo", "espada": true, "capitan": false, "hollow": true, "genero": "M"},
-    {"nombre": "Rukia", "espada": true, "capitan": false, "hollow": false, "genero": "F"},
-    {"nombre": "Aizen", "espada": true, "capitan": true, "hollow": true, "genero": "M"},
-    {"nombre": "Byakuya", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Kenpachi", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Toshiro", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Yoruichi", "espada": false, "capitan": true, "hollow": false, "genero": "F"},
-    {"nombre": "Urahara", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Orihime", "espada": false, "capitan": false, "hollow": false, "genero": "F"},
-    {"nombre": "Chad", "espada": false, "capitan": false, "hollow": false, "genero": "M"},
-    {"nombre": "Uryu", "espada": false, "capitan": false, "hollow": false, "genero": "M"},
-    {"nombre": "Renji", "espada": true, "capitan": false, "hollow": false, "genero": "M"},
-    {"nombre": "Grimmjow", "espada": true, "capitan": false, "hollow": true,"genero": "F"},
-    {"nombre": "Shunsui", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Jushiro", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Rangiku", "espada": true, "capitan": false, "hollow": false, "genero": "F"},
-    {"nombre": "Ikkaku", "espada": true, "capitan": false, "hollow": false, "genero": "M"},
-    {"nombre": "Yamamoto", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Hitsugaya", "espada": true, "capitan": true, "hollow": false, "genero": "M"},
-    {"nombre": "Hiyori", "espada": true, "capitan": false, "hollow": true, "genero": "F"},
-    {"nombre": "Shinji", "espada": true, "capitan": true, "hollow": true, "genero": "M"},
-    {"nombre": "Kensei", "espada": true, "capitan": true, "hollow": true, "genero": "M"},
-    {"nombre": "Rose", "espada": true, "capitan": true, "hollow": true, "genero": "M"},
-    {"nombre": "Love", "espada": true, "capitan": false, "hollow": true, "genero": "M"},
-    {"nombre": "Mashiro", "espada": false, "capitan": false, "hollow": true, "genero": "F"},
-    {"nombre": "Barragan", "espada": false,"capitan": true,"hollow": true,"genero": "M"},
-    {"nombre": "Starrk", "espada": true,"capitan": true,"hollow": true,"genero": "M"},
-    {"nombre": "Halibel", "espada": true,"capitan": true,"hollow": true,"genero": "F"},
-    {"nombre": "Nnoitra", "espada": true,"capitan": false,"hollow": true,"genero": "M"}
+    {
+        "nombre": "Ichigo",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Rukia",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Aizen",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Byakuya",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Kenpachi",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Toshiro",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Yoruichi",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "velocidad"
+    },
+    {
+        "nombre": "Urahara",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Orihime",
+        "grupo": "humano",
+        "capitan": false,
+        "hollow": false,
+        "genero": "F",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Chad",
+        "grupo": "humano",
+        "capitan": false,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Uryu",
+        "grupo": "humano",
+        "capitan": false,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "arco"
+    },
+    {
+        "nombre": "Renji",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Grimmjow",
+        "grupo": "arrancar",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Ulquiorra",
+        "grupo": "arrancar",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Nel",
+        "grupo": "arrancar",
+        "capitan": false,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Mayuri",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Shunsui",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Jushiro",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Rangiku",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "F",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Ikkaku",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Yamamoto",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Hitsugaya",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Hiyori",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Shinji",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Kensei",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Rose",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Love",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Mashiro",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "velocidad"
+    },
+    {
+        "nombre": "Barragan",
+        "grupo": "arrancar",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido"
+    },
+    {
+        "nombre": "Starrk",
+        "grupo": "arrancar",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "arma"
+    },
+    {
+        "nombre": "Halibel",
+        "grupo": "arrancar",
+        "capitan": true,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": true,
+        "tipo_poder": "espada"
+    },
+    {
+        "nombre": "Nnoitra",
+        "grupo": "arrancar",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza"
+    },
+    {
+        "nombre": "Kenpachi Zaraki",
+        "grupo": "humano",
+        "capitan": true,
+        "hollow": false,
+        "distancia": false,
+        "poder": "otro",
+        "genero": "M"
+    }
 ]
