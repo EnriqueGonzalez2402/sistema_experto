@@ -8,7 +8,7 @@ def main():
     errores = verificar(personajes)
 
     if errores:
-        print("❌ Error en base de conocimiento:", errores)
+        print("Error:", errores)
     else:
         iniciar_juego(personajes)
 
