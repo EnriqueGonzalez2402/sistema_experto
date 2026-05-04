@@ -1,9 +1,10 @@
-from adquisicion.adquisicion import cargar_personajes
-from interfaz.juego import iniciar_juego
+from interfaz.gui import JuegoGUI
+import tkinter as tk
 
 def main():
-    personajes = cargar_personajes()
-    iniciar_juego(personajes)
+    root = tk.Tk()
+    app = JuegoGUI(root)
+    root.mainloop()
 
 if __name__ == "__main__":
     main()
