@@ -44,33 +44,17 @@
         "arma_distancia": false,
         "tipo_poder": "espada"
     },
-    {
-        "nombre": "Toshiro",
-        "grupo": "shinigami",
-        "capitan": true,
-        "hollow": false,
-        "genero": "M",
-        "arma_distancia": true,
-        "tipo_poder": "espada"
-    },
-    {
-        "nombre": "Yoruichi",
-        "grupo": "shinigami",
-        "capitan": false,
-        "hollow": false,
-        "genero": "F",
-        "arma_distancia": false,
-        "tipo_poder": "velocidad"
-    },
+
     {
         "nombre": "Urahara",
         "grupo": "shinigami",
-        "capitan": true,
+        "capitan": false,
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
         "tipo_poder": "kido"
     },
+    
     {
         "nombre": "Orihime",
         "grupo": "humano",
@@ -104,7 +88,7 @@
         "capitan": false,
         "hollow": false,
         "genero": "M",
-        "arma_distancia": true,
+        "arma_distancia": false,
         "tipo_poder": "espada"
     },
     {

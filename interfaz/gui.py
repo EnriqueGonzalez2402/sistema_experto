@@ -100,8 +100,10 @@ class JuegoGUI:
         # ❌ sin coincidencias
         if len(self.restantes) == 0:
             self.label_pregunta.config(text="⚠️ No hay coincidencias")
-            self.label_info.config(text="Respuestas inconsistentes")
-            self.mostrar_final()
+            self.label_info.config(text="Enséñame el personaje")
+
+            self.mostrar_aprendizaje()
+   
             return
 
         # 🎯 éxito
@@ -219,6 +221,7 @@ class JuegoGUI:
             command=self.root.quit
         )
         btn_exit.pack(pady=5)
+        
     def reiniciar(self):
 
         # reset lógico
@@ -231,6 +234,131 @@ class JuegoGUI:
 
         # reconstruir todo
         self.__init__(self.root)
+        
+        
+        
+    def mostrar_aprendizaje(self):
+
+        self.btn_si.pack_forget()
+        self.btn_no.pack_forget()
+
+        if hasattr(self, "frame_aprender"):
+            self.frame_aprender.destroy()
+
+        self.frame_aprender = tk.Frame(self.root, bg="#121212")
+        self.frame_aprender.pack(pady=10)
+
+        tk.Label(self.frame_aprender, text="🧠 Nuevo personaje",
+                fg="white", bg="#121212").pack()
+
+        tk.Label(self.frame_aprender, text="Nombre:",
+                fg="white", bg="#121212").pack()
+
+        self.entry_nombre = tk.Entry(self.frame_aprender)
+        self.entry_nombre.pack(pady=5)
+
+        self.vars = {}
+
+        campos = {
+            "grupo": ["shinigami", "arrancar", "humano", "vizard"],
+            "capitan": [True, False],
+            "hollow": [True, False],
+            "arma_distancia": [True, False],
+            "tipo_poder": ["espada", "kido", "fuerza", "velocidad", "arma"],
+            "genero": ["M", "F"]
+        }
+
+        for attr, opciones in campos.items():
+
+            if attr in self.hechos:
+                continue
+
+            tk.Label(self.frame_aprender, text=attr,
+                    fg="white", bg="#121212").pack()
+
+            var = tk.StringVar()
+            var.set(str(opciones[0]))
+            self.vars[attr] = var
+
+            tk.OptionMenu(
+                self.frame_aprender, var,
+                *[str(o) for o in opciones]
+            ).pack()
+
+        tk.Button(
+            self.frame_aprender,
+            text="💾 Guardar",
+            bg="#4CAF50",
+            fg="white",
+            command=self.guardar_nuevo_personaje
+        ).pack(pady=10)   
+    
+    def guardar_nuevo_personaje(self):
+
+        nombre = self.entry_nombre.get().strip()
+
+        if not nombre:
+            self.label_info.config(text="⚠️ Ingresa nombre")
+            return
+
+        # evitar duplicados
+        for p in self.personajes:
+            if p["nombre"].lower() == nombre.lower():
+                self.label_info.config(text="⚠️ Ya existe")
+                return
+
+        nuevo = {"nombre": nombre}
+
+        # usar respuestas previas
+        for attr, val in self.hechos.items():
+
+            valor, respuesta = val
+
+            if respuesta:
+                nuevo[attr] = valor
+            else:
+                if isinstance(valor, bool):
+                    nuevo[attr] = not valor
+                else:
+                    nuevo[attr] = "otro"
+
+        # completar lo faltante
+        for attr, var in self.vars.items():
+
+            valor = var.get()
+
+            if valor == "True":
+                valor = True
+            elif valor == "False":
+                valor = False
+
+            nuevo[attr] = valor
+
+        # estructura base
+        base = {
+            "grupo": "otro",
+            "capitan": False,
+            "hollow": False,
+            "arma_distancia": False,
+            "tipo_poder": "otro",
+            "genero": "M"
+        }
+
+        for k, v in base.items():
+            if k not in nuevo:
+                nuevo[k] = v
+
+        from adquisicion.adquisicion import guardar_personaje
+        guardar_personaje(nuevo)
+
+        # recargar personajes
+        self.personajes = cargar_personajes()
+
+        self.label_pregunta.config(text="✅ Aprendido")
+        self.label_info.config(text=nombre)
+
+        self.mostrar_final()
+    
 # ---------------- MAIN ----------------
 
 if __name__ == "__main__":
