@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import os
 
+from inferencia.prob import inferencia_prob
 from inferencia.motor import mejor_pregunta, filtrar
 from adquisicion.adquisicion import cargar_personajes
 
@@ -19,15 +20,16 @@ class JuegoGUI:
         self.restantes = self.personajes.copy()
         self.hechos = {}
 
+        # 🔥 PREGUNTAS CORREGIDAS (alineadas con JSON)
         self.preguntas = [
             ("grupo", "¿Es shinigami?", "shinigami"),
             ("grupo", "¿Es arrancar?", "arrancar"),
             ("grupo", "¿Es humano?", "humano"),
             ("capitan", "¿Es capitán?", True),
             ("hollow", "¿Tiene poderes hollow?", True),
-            ("distancia", "¿Ataca a distancia?", True),
-            ("poder", "¿Usa espada?", "espada"),
-            ("poder", "¿Usa kido?", "kido"),
+            ("arma_distancia", "¿Ataca a distancia?", True),
+            ("tipo_poder", "¿Usa espada?", "espada"),
+            ("tipo_poder", "¿Usa kido?", "kido"),
             ("genero", "¿Es hombre?", "M")
         ]
 
@@ -51,17 +53,14 @@ class JuegoGUI:
         )
         self.label_progress.pack()
 
-        # Barra progreso
         self.progress = ttk.Progressbar(root, length=300, mode='determinate')
         self.progress.pack(pady=10)
 
-        # Imagen
         self.label_img = tk.Label(root, bg="#121212")
         self.label_img.pack(pady=20)
 
         self.cargar_imagen("placeholder.png")
 
-        # Botones
         frame = tk.Frame(root, bg="#121212")
         frame.pack(pady=30)
 
@@ -87,7 +86,6 @@ class JuegoGUI:
         try:
             base = os.path.dirname(__file__)
             ruta = os.path.join(base, "imagenes", nombre)
-
             img = Image.open(ruta)
         except:
             img = Image.new("RGB", (300, 300), "gray")
@@ -100,34 +98,38 @@ class JuegoGUI:
 
     def siguiente_pregunta(self):
 
+        # ❌ contradicción real
         if len(self.restantes) == 0:
-            self.label_pregunta.config(text="⚠️ Contradicción detectada")
+            self.label_pregunta.config(text="⚠️ No hay coincidencias")
+            self.label_info.config(text="Respuestas inconsistentes")
             return
 
+        # 🎯 caso ideal
         if len(self.restantes) == 1:
             nombre = self.restantes[0]["nombre"]
 
             self.label_pregunta.config(text=f"🎯 ¡Es {nombre}!")
             self.label_info.config(text="🧠 Inferencia completada")
 
-            # cargar imagen real
             self.cargar_imagen(f"{nombre.lower()}.png")
-
             self.progress['value'] = 100
             return
 
+        # 🔍 seleccionar mejor pregunta
         mejor = mejor_pregunta(self.restantes, self.preguntas, self.hechos)
 
+        # 🤔 sin más preguntas → inferencia probabilística
         if not mejor:
-            self.label_pregunta.config(text="🤔 No estoy seguro")
+            resultados = inferencia_prob(self.restantes, self.hechos)
+            self.mostrar_resultados(resultados)
             return
 
         self.atributo, texto, self.valor = mejor
 
-        # animación
+        # animación simple
         self.label_pregunta.config(text="🤖 Pensando...")
         self.root.update()
-        self.root.after(400)
+        self.root.after(300)
 
         self.label_pregunta.config(text=texto)
         self.label_info.config(text=f"Quedan {len(self.restantes)} posibles")
@@ -137,16 +139,40 @@ class JuegoGUI:
 
     def responder(self, respuesta):
 
-        # marcar atributo como usado
-        self.hechos[self.atributo] = self.valor if respuesta else f"!= {self.valor}"
+        # ✅ guardar correctamente el hecho
+        self.hechos[self.atributo] = (self.valor, respuesta)
 
+        # 🔍 filtrar
         if respuesta:
             self.restantes = filtrar(self.restantes, self.atributo, self.valor)
         else:
-            self.restantes = [p for p in self.restantes if p.get(self.atributo) != self.valor]
+            self.restantes = [
+                p for p in self.restantes
+                if p.get(self.atributo) != self.valor
+            ]
 
         self.siguiente_pregunta()
 
+    # ---------------- RESULTADOS ----------------
+
+    def mostrar_resultados(self, resultados):
+
+        self.label_pregunta.config(text="🧠 RESULTADOS")
+        self.label_info.config(text="Top candidatos")
+
+        texto = ""
+
+        for nombre, prob in resultados[:5]:
+            texto += f"{nombre}: {round(prob*100)}%\n"
+
+        self.label_progress.config(text=texto)
+
+        if resultados:
+            mejor = resultados[0][0]
+            self.cargar_imagen(f"{mejor.lower()}.png")
+
+
+# ---------------- MAIN ----------------
 
 if __name__ == "__main__":
     root = tk.Tk()

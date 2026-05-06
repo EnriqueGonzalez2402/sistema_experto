@@ -286,14 +286,5 @@
         "genero": "M",
         "arma_distancia": false,
         "tipo_poder": "fuerza"
-    },
-    {
-        "nombre": "Kenpachi Zaraki",
-        "grupo": "humano",
-        "capitan": true,
-        "hollow": false,
-        "distancia": false,
-        "poder": "otro",
-        "genero": "M"
     }
 ]
