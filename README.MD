@@ -18,6 +18,6 @@ Este proyecto implementa un sistema experto híbrido basado en reglas y probabil
 
 ```bash
 python main.py
-
+```
 AUTOR
 Luis González
