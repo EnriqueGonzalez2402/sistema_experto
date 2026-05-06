@@ -9,15 +9,37 @@ def iniciar_juego(personajes):
     historial = []
 
     preguntas = [
-        ("grupo", "¿Es shinigami? (s/n): ", "shinigami"),
-        ("grupo", "¿Es arrancar? (s/n): ", "arrancar"),
-        ("grupo", "¿Es humano? (s/n): ", "humano"),
-        ("capitan", "¿Es capitán? (s/n): ", True),
-        ("hollow", "¿Tiene poderes hollow? (s/n): ", True),
-        ("distancia", "¿Ataca a distancia? (s/n): ", True),
-        ("poder", "¿Usa espada? (s/n): ", "espada"),
-        ("poder", "¿Usa kido? (s/n): ", "kido"),
-        ("genero", "¿Es hombre? (s/n): ", "M")
+            # 🔹 BASE
+        ("grupo", "¿Es shinigami?", "shinigami"),
+        ("grupo", "¿Es arrancar?", "arrancar"),
+        ("grupo", "¿Es humano?", "humano"),
+
+        ("capitan", "¿Es capitán?", True),
+        ("hollow", "¿Tiene poderes hollow?", True),
+
+        ("arma_distancia", "¿Ataca a distancia?", True),
+        ("tipo_poder", "¿Usa espada?", "espada"),
+        ("tipo_poder", "¿Usa kido?", "kido"),
+
+        ("genero", "¿Es hombre?", "M"),
+
+        # 🔥 NUEVAS (las que agregamos)
+        ("elemento", "¿Usa hielo?", "hielo"),
+        ("elemento", "¿Usa pétalos?", "petalos"),
+        ("elemento", "¿Usa fuego?", "fuego"),
+
+        ("arma_tipo", "¿Tiene doble espada?", "doble"),
+        ("arma_tipo", "¿Usa guadaña?", "guadana"),
+
+        ("estatus", "¿Es noble?", True),
+
+        ("fisico", "¿Es joven?", "joven"),
+        ("fisico", "¿Está enfermo?", "enfermo"),
+        ("fisico", "¿Es robusto?", "robusto"),
+
+        ("animal", "¿Tiene temática animal?", True),
+
+        ("estilo", "¿Es más rápido que fuerte?", True),
     ]
 
     print("🎮 Piensa en un personaje de Bleach...\n")

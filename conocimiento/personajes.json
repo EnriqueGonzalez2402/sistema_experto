@@ -6,7 +6,13 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
     },
     {
         "nombre": "Rukia",
@@ -15,7 +21,13 @@
         "hollow": false,
         "genero": "F",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "hielo",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Aizen",
@@ -24,7 +36,13 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "kido"
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Byakuya",
@@ -33,7 +51,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "petalos",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Kenpachi",
@@ -42,19 +66,15 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
-
-    {
-        "nombre": "Urahara",
-        "grupo": "shinigami",
-        "capitan": false,
-        "hollow": false,
-        "genero": "M",
-        "arma_distancia": true,
-        "tipo_poder": "kido"
-    },
-    
+   
     {
         "nombre": "Orihime",
         "grupo": "humano",
@@ -62,7 +82,13 @@
         "hollow": false,
         "genero": "F",
         "arma_distancia": true,
-        "tipo_poder": "kido"
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Chad",
@@ -71,7 +97,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "fuerza"
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Uryu",
@@ -80,7 +112,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "arco"
+        "tipo_poder": "arco",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
     },
     {
         "nombre": "Renji",
@@ -89,7 +127,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": true
     },
     {
         "nombre": "Grimmjow",
@@ -98,7 +142,13 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "fuerza"
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": true,
+        "estilo": true
     },
     {
         "nombre": "Ulquiorra",
@@ -107,7 +157,13 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "kido"
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Nel",
@@ -116,7 +172,13 @@
         "hollow": true,
         "genero": "F",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": true,
+        "estilo": false
     },
     {
         "nombre": "Mayuri",
@@ -125,7 +187,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "kido"
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Shunsui",
@@ -134,7 +202,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "doble",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Jushiro",
@@ -143,34 +217,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "espada"
-    },
-    {
-        "nombre": "Rangiku",
-        "grupo": "shinigami",
-        "capitan": false,
-        "hollow": false,
-        "genero": "F",
-        "arma_distancia": true,
-        "tipo_poder": "kido"
-    },
-    {
-        "nombre": "Ikkaku",
-        "grupo": "shinigami",
-        "capitan": false,
-        "hollow": false,
-        "genero": "M",
-        "arma_distancia": false,
-        "tipo_poder": "fuerza"
-    },
-    {
-        "nombre": "Yamamoto",
-        "grupo": "shinigami",
-        "capitan": true,
-        "hollow": false,
-        "genero": "M",
-        "arma_distancia": false,
-        "tipo_poder": "kido"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "doble",
+        "estatus": false,
+        "fisico": "enfermo",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Hitsugaya",
@@ -179,61 +232,13 @@
         "hollow": false,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "espada"
-    },
-    {
-        "nombre": "Hiyori",
-        "grupo": "vizard",
-        "capitan": false,
-        "hollow": true,
-        "genero": "F",
-        "arma_distancia": false,
-        "tipo_poder": "espada"
-    },
-    {
-        "nombre": "Shinji",
-        "grupo": "vizard",
-        "capitan": true,
-        "hollow": true,
-        "genero": "M",
-        "arma_distancia": false,
-        "tipo_poder": "espada"
-    },
-    {
-        "nombre": "Kensei",
-        "grupo": "vizard",
-        "capitan": true,
-        "hollow": true,
-        "genero": "M",
-        "arma_distancia": false,
-        "tipo_poder": "fuerza"
-    },
-    {
-        "nombre": "Rose",
-        "grupo": "vizard",
-        "capitan": true,
-        "hollow": true,
-        "genero": "M",
-        "arma_distancia": true,
-        "tipo_poder": "kido"
-    },
-    {
-        "nombre": "Love",
-        "grupo": "vizard",
-        "capitan": false,
-        "hollow": true,
-        "genero": "M",
-        "arma_distancia": false,
-        "tipo_poder": "fuerza"
-    },
-    {
-        "nombre": "Mashiro",
-        "grupo": "vizard",
-        "capitan": false,
-        "hollow": true,
-        "genero": "F",
-        "arma_distancia": false,
-        "tipo_poder": "velocidad"
+        "tipo_poder": "espada",
+        "elemento": "hielo",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
     },
     {
         "nombre": "Barragan",
@@ -242,7 +247,13 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "kido"
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Starrk",
@@ -251,16 +262,28 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": true,
-        "tipo_poder": "arma"
+        "tipo_poder": "arma",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": true,
+        "estilo": true
     },
     {
-        "nombre": "Halibel",
+        "nombre": "Harribel",
         "grupo": "arrancar",
         "capitan": true,
         "hollow": true,
         "genero": "F",
         "arma_distancia": true,
-        "tipo_poder": "espada"
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
     },
     {
         "nombre": "Nnoitra",
@@ -269,6 +292,162 @@
         "hollow": true,
         "genero": "M",
         "arma_distancia": false,
-        "tipo_poder": "fuerza"
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "guadana",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
+    },
+     {
+        "nombre": "Rangiku",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "F",
+        "arma_distancia": true,
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Ikkaku",
+        "grupo": "shinigami",
+        "capitan": false,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "robusto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Yamamoto",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "kido",
+        "elemento": "fuego",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Hitsugaya",
+        "grupo": "shinigami",
+        "capitan": true,
+        "hollow": false,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "espada",
+        "elemento": "hielo",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
+    },
+    {
+        "nombre": "Hiyori",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
+    },
+    {
+        "nombre": "Shinji",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "espada",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": true,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Kensei",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "robusto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Rose",
+        "grupo": "vizard",
+        "capitan": true,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": true,
+        "tipo_poder": "kido",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "adulto",
+        "animal": false,
+        "estilo": true
+    },
+    {
+        "nombre": "Love",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "M",
+        "arma_distancia": false,
+        "tipo_poder": "fuerza",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "robusto",
+        "animal": false,
+        "estilo": false
+    },
+    {
+        "nombre": "Mashiro",
+        "grupo": "vizard",
+        "capitan": false,
+        "hollow": true,
+        "genero": "F",
+        "arma_distancia": false,
+        "tipo_poder": "velocidad",
+        "elemento": "ninguno",
+        "arma_tipo": "normal",
+        "estatus": false,
+        "fisico": "joven",
+        "animal": false,
+        "estilo": true
     }
 ]

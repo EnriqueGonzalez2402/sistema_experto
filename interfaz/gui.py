@@ -21,15 +21,38 @@ class JuegoGUI:
         self.hechos = {}
 
         self.preguntas = [
+
+            # BASE
             ("grupo", "¿Es shinigami?", "shinigami"),
             ("grupo", "¿Es arrancar?", "arrancar"),
             ("grupo", "¿Es humano?", "humano"),
+
             ("capitan", "¿Es capitán?", True),
             ("hollow", "¿Tiene poderes hollow?", True),
+
             ("arma_distancia", "¿Ataca a distancia?", True),
             ("tipo_poder", "¿Usa espada?", "espada"),
             ("tipo_poder", "¿Usa kido?", "kido"),
-            ("genero", "¿Es hombre?", "M")
+
+            ("genero", "¿Es hombre?", "M"),
+
+            # 🔥 NUEVAS
+            ("elemento", "¿Usa hielo?", "hielo"),
+            ("elemento", "¿Usa pétalos?", "petalos"),
+            ("elemento", "¿Usa fuego?", "fuego"),
+
+            ("arma_tipo", "¿Tiene doble espada?", "doble"),
+            ("arma_tipo", "¿Usa guadaña?", "guadana"),
+
+            ("estatus", "¿Es noble?", True),
+
+            ("fisico", "¿Es joven?", "joven"),
+            ("fisico", "¿Es robusto?", "robusto"),
+            ("fisico", "¿Está enfermo?", "enfermo"),
+
+            ("animal", "¿Tiene temática animal?", True),
+
+            ("estilo", "¿Es más rápido que fuerte?", True),
         ]
 
         # ---------------- UI ----------------
