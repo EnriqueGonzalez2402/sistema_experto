@@ -20,7 +20,6 @@ class JuegoGUI:
         self.restantes = self.personajes.copy()
         self.hechos = {}
 
-        # 🔥 PREGUNTAS CORREGIDAS (alineadas con JSON)
         self.preguntas = [
             ("grupo", "¿Es shinigami?", "shinigami"),
             ("grupo", "¿Es arrancar?", "arrancar"),
@@ -98,13 +97,14 @@ class JuegoGUI:
 
     def siguiente_pregunta(self):
 
-        # ❌ contradicción real
+        # ❌ sin coincidencias
         if len(self.restantes) == 0:
             self.label_pregunta.config(text="⚠️ No hay coincidencias")
             self.label_info.config(text="Respuestas inconsistentes")
+            self.mostrar_final()
             return
 
-        # 🎯 caso ideal
+        # 🎯 éxito
         if len(self.restantes) == 1:
             nombre = self.restantes[0]["nombre"]
 
@@ -113,12 +113,13 @@ class JuegoGUI:
 
             self.cargar_imagen(f"{nombre.lower()}.png")
             self.progress['value'] = 100
+
+            self.mostrar_final()
             return
 
-        # 🔍 seleccionar mejor pregunta
         mejor = mejor_pregunta(self.restantes, self.preguntas, self.hechos)
 
-        # 🤔 sin más preguntas → inferencia probabilística
+        # 🤔 inferencia
         if not mejor:
             resultados = inferencia_prob(self.restantes, self.hechos)
             self.mostrar_resultados(resultados)
@@ -126,7 +127,6 @@ class JuegoGUI:
 
         self.atributo, texto, self.valor = mejor
 
-        # animación simple
         self.label_pregunta.config(text="🤖 Pensando...")
         self.root.update()
         self.root.after(300)
@@ -139,10 +139,8 @@ class JuegoGUI:
 
     def responder(self, respuesta):
 
-        # ✅ guardar correctamente el hecho
         self.hechos[self.atributo] = (self.valor, respuesta)
 
-        # 🔍 filtrar
         if respuesta:
             self.restantes = filtrar(self.restantes, self.atributo, self.valor)
         else:
@@ -171,7 +169,68 @@ class JuegoGUI:
             mejor = resultados[0][0]
             self.cargar_imagen(f"{mejor.lower()}.png")
 
+        self.mostrar_final()
 
+    # ---------------- FINAL ----------------
+
+    def mostrar_final(self):
+
+        # desactivar botones
+        self.btn_si.pack_forget()
+        self.btn_no.pack_forget()
+
+        # limpiar espacio inferior si ya existe
+        if hasattr(self, "frame_final"):
+            self.frame_final.destroy()
+
+        # contenedor final
+        self.frame_final = tk.Frame(self.root, bg="#121212")
+        self.frame_final.pack(side="bottom", pady=30)
+
+        # título opcional
+        label = tk.Label(
+            self.frame_final,
+            text="¿Qué quieres hacer?",
+            font=("Arial", 12),
+            fg="white",
+            bg="#121212"
+        )
+        label.pack(pady=10)
+
+        # botones
+        btn_reset = tk.Button(
+            self.frame_final,
+            text="🔄 Jugar otra vez",
+            width=18,
+            height=2,
+            bg="#2196F3",
+            fg="white",
+            command=self.reiniciar
+        )
+        btn_reset.pack(pady=5)
+
+        btn_exit = tk.Button(
+            self.frame_final,
+            text="❌ Salir",
+            width=18,
+            height=2,
+            bg="#555",
+            fg="white",
+            command=self.root.quit
+        )
+        btn_exit.pack(pady=5)
+    def reiniciar(self):
+
+        # reset lógico
+        self.restantes = self.personajes.copy()
+        self.hechos = {}
+
+        # limpiar toda la interfaz
+        for widget in self.root.winfo_children():
+            widget.destroy()
+
+        # reconstruir todo
+        self.__init__(self.root)
 # ---------------- MAIN ----------------
 
 if __name__ == "__main__":
